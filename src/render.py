@@ -125,8 +125,11 @@ def _md_to_html(text: str, repo_index: dict) -> str:
             in_signal = True
             continue
 
-        # Repo section header: **owner/repo** (standalone line)
-        repo_match = re.match(r'^\*\*([\w.\-]+/[\w.\-]+)\*\*\s*(?:—|--|-|–)?(.*)$', stripped)
+        # Repo section header: **owner/repo** OR ## owner/repo (standalone line)
+        repo_match = (
+            re.match(r'^\*\*([\w.\-]+/[\w.\-]+)\*\*\s*(?:—|--|-|–)?(.*)$', stripped)
+            or re.match(r'^#{1,3}\s+([\w.\-]+/[\w.\-]+)\s*(?:—|--|-|–)?(.*)$', stripped)
+        )
         if repo_match and not in_fire and not in_signal:
             flush_buffer()
             repo_name = repo_match.group(1)
