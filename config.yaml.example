@@ -8,8 +8,8 @@ watchlist:
   - anthropics/claude-code
   - anthropics/anthropic-sdk-python
   - anthropics/anthropic-sdk-typescript
-  - anthropics/model-context-protocol
-  - anthropics/prompt-library
+  - modelcontextprotocol/specification
+  - anthropics/anthropic-cookbook
   - anthropics/courses
   # Add community repos you always want to track:
   # - myorg/my-mcp-server

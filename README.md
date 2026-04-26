@@ -38,7 +38,7 @@ pip install -r requirements.txt
 1. **Configure**: Copy `config.yaml.example` to `config.yaml`. Set `sender_email` to an address on your verified Resend domain.
 
 2. **Add GitHub Secrets** in your repo's Settings → Secrets → Actions:
-   - `GITHUB_PAT` — your fine-grained token
+   - `GH_PAT` — your fine-grained token (note: `GITHUB_PAT` is reserved by GitHub Actions — use `GH_PAT`)
    - `ANTHROPIC_API_KEY` — your Anthropic key
    - `RESEND_API_KEY` — your Resend key
    - `SUBSCRIBER_EMAILS` — comma-separated recipient addresses (e.g. `you@gmail.com,friend@gmail.com`)
