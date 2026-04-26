@@ -1,0 +1,19 @@
+watchlist:
+  - anthropics/claude-code
+  - anthropics/anthropic-sdk-python
+  - anthropics/anthropic-sdk-typescript
+  - anthropics/model-context-protocol
+  - anthropics/prompt-library
+  - anthropics/courses
+
+# Email address your Resend-verified domain sends from.
+# Must match a domain you've verified at resend.com/domains.
+sender_email: "digest@yourdomain.com"
+
+# Set to true after enabling GitHub Pages in repo Settings → Pages → Source: docs/ on main.
+github_pages:
+  enabled: false
+
+# Claude model to use for analysis. Change to upgrade without editing Python source.
+# See available models at console.anthropic.com/docs/models.
+model: claude-sonnet-4-6

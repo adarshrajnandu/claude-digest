@@ -1,0 +1,15 @@
+**anthropics/claude-code** — The big move this cycle: the CLI now ships with an experimental MCP server mode, letting you embed Claude Code directly into your own toolchain. If you've been waiting for a way to drive Claude from within a script rather than an interactive session, this is it. Watch for the `--mcp` flag behavior as it stabilizes — the API shape is still shifting.
+
+**anthropics/anthropic-sdk-python** — Two async improvements landed: better streaming error handling and a context-manager pattern for client lifecycle. The async streaming fix is worth upgrading for if you're running long generation jobs; previously a mid-stream error could leave the connection in a bad state. Small but meaningful for production workloads.
+
+**anthropics/model-context-protocol** — The MCP spec got its first official versioning annotation. There's now a `protocolVersion` field in the handshake, which means server/client compatibility checks are finally possible. Community implementations have been guessing at compatibility; this fixes that. If you're building an MCP server, update your handshake response.
+
+**Catching fire** 🔥
+
+**community/mcp-filesystem-server** — New this run. A clean MCP implementation that exposes local filesystem operations to Claude. Already at 340 stars after 4 days, which suggests pent-up demand for exactly this kind of tool. The code is minimal and readable — worth forking if you need a starting point for your own MCP server.
+
+---
+
+**Signal of the week**
+
+The MCP ecosystem is crossing an inflection point. Three independent community projects landed this cycle — a filesystem server, a database connector, and a browser control tool — none of which came from Anthropic. The protocol is attracting builders who aren't waiting for first-party implementations. The next 30 days will tell us whether MCP becomes the USB-C of AI tool interfaces, or fragments into incompatible forks. The versioning field that landed in the core spec this week is the right foundation. Build on it.

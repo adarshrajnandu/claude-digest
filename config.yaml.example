@@ -1,0 +1,36 @@
+# config.yaml.example — copy to config.yaml and fill in your values.
+# This file is safe to commit. Never put secrets here (see .env.example).
+
+# Repos to always include in the digest, regardless of topic discovery.
+# Format: owner/repo (one per line). These are processed first and take
+# priority over topic-discovered repos when the 15-repo cap is reached.
+watchlist:
+  - anthropics/claude-code
+  - anthropics/anthropic-sdk-python
+  - anthropics/anthropic-sdk-typescript
+  - anthropics/model-context-protocol
+  - anthropics/prompt-library
+  - anthropics/courses
+  # Add community repos you always want to track:
+  # - myorg/my-mcp-server
+
+# Email address the digest is sent FROM.
+# Must be from a domain you have verified in Resend (resend.com/domains).
+# Never use a Gmail, Outlook, or other personal address here — Resend requires
+# a custom domain you control.
+sender_email: "digest@yourdomain.com"
+
+# GitHub Pages archive (optional).
+# Set to true AFTER you have enabled Pages in your repo:
+#   Settings → Pages → Source: "Deploy from a branch" → Branch: main, Folder: /docs
+# Once enabled, each digest run writes an HTML file to docs/YYYY-MM-DD.html.
+# Pages typically update 30–60 seconds after the commit is pushed.
+github_pages:
+  enabled: false
+
+# Claude model used for analysis.
+# To upgrade, change this value — no Python edits needed.
+# Available models: https://console.anthropic.com/docs/models
+# Recommended: claude-sonnet-4-6 (fast + affordable)
+#              claude-opus-4-7 (best quality, 3-4x higher cost)
+model: claude-sonnet-4-6
