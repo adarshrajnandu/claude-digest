@@ -52,7 +52,11 @@ def _validate_env_and_config() -> tuple[dict, list[str]]:
         errors.append(f"config.yaml parse error: {exc}")
         config = {}
 
-    if config is not None:
+    if not isinstance(config, dict):
+        errors.append("config.yaml must be a YAML mapping (key: value), not a scalar or list")
+        config = {}
+
+    if config:
         watchlist = config.get("watchlist")
         if not watchlist:
             errors.append("config.yaml missing 'watchlist' key or it is empty")

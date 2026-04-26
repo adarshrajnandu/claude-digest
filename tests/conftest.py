@@ -18,7 +18,7 @@ def _make_github_repo(name: str, stars: int = 100) -> dict:
     }
 
 
-def _make_commit(sha: str = "abc12345") -> dict:
+def _make_commit(sha: str = "abc12345abc12345abc12345abc12345abc12345") -> dict:
     return {
         "sha": sha,
         "commit": {

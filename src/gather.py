@@ -9,6 +9,7 @@ DigestPayload (list[RepoActivity]).
 import json
 import logging
 import os
+import tempfile
 from datetime import datetime, timedelta, timezone
 from typing import TypedDict
 
@@ -24,6 +25,7 @@ MAX_RELEASES = 5
 TOPIC_STAR_MIN = 10
 LOOKBACK_DAYS = 3
 PRUNE_DAYS = 30
+MAX_SHAS_PER_REPO = 500
 
 TOPICS = ["claude", "claude-code", "anthropic", "mcp", "model-context-protocol"]
 
@@ -62,8 +64,18 @@ def load_state() -> dict:
 
 def save_state(state: dict) -> None:
     os.makedirs("state", exist_ok=True)
-    with open(STATE_FILE, "w") as f:
-        json.dump(state, f, indent=2)
+    dir_path = os.path.dirname(STATE_FILE)
+    fd, tmp_path = tempfile.mkstemp(dir=dir_path, suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w") as f:
+            json.dump(state, f, indent=2)
+        os.replace(tmp_path, STATE_FILE)
+    except Exception:
+        try:
+            os.unlink(tmp_path)
+        except OSError:
+            pass
+        raise
 
 
 def prune_state(state: dict) -> dict:
@@ -78,8 +90,14 @@ def prune_state(state: dict) -> dict:
         if recent:
             pruned_star_history[repo] = recent
 
+    # Cap seen_shas per repo to avoid unbounded growth
+    pruned_shas = {
+        repo: shas[-MAX_SHAS_PER_REPO:]
+        for repo, shas in state.get("seen_shas", {}).items()
+    }
+
     return {
-        "seen_shas": state.get("seen_shas", {}),
+        "seen_shas": pruned_shas,
         "first_seen_repos": pruned_first_seen,
         "star_history": pruned_star_history,
     }
@@ -148,7 +166,8 @@ def _fetch_commits(repo_name: str, headers: dict, since: str) -> list[dict]:
         items = r.json()
         return [
             {
-                "sha": c["sha"][:8],
+                "sha": c["sha"][:8],       # display only
+                "sha_full": c["sha"],       # used for deduplication
                 "message": sanitize(c["commit"]["message"], 200),
                 "date": c["commit"]["author"]["date"][:10],
             }
@@ -186,7 +205,7 @@ def _fetch_issues(repo_name: str, headers: dict, since: str) -> list[dict]:
         return []
 
 
-def _fetch_releases(repo_name: str, headers: dict) -> list[dict]:
+def _fetch_releases(repo_name: str, headers: dict, since: str) -> list[dict]:
     url = f"https://api.github.com/repos/{repo_name}/releases"
     try:
         r = requests.get(
@@ -205,7 +224,9 @@ def _fetch_releases(repo_name: str, headers: dict) -> list[dict]:
                 "published_at": (rel.get("published_at") or "")[:10],
             }
             for rel in r.json()
-            if isinstance(rel, dict) and not rel.get("draft")
+            if isinstance(rel, dict)
+            and not rel.get("draft")
+            and (rel.get("published_at") or "") >= since[:10]
         ]
     except Exception as exc:
         logger.warning("stage=gather releases fetch failed for %s: %s", repo_name, exc)
@@ -291,11 +312,11 @@ def gather(config: dict) -> DigestPayload:
 
         commits = _fetch_commits(repo_name, headers, since_iso)
         issues = _fetch_issues(repo_name, headers, since_iso)
-        releases = _fetch_releases(repo_name, headers)
+        releases = _fetch_releases(repo_name, headers, since_iso)
 
         # Filter commits by seen_shas
         repo_seen = set(seen_shas.get(repo_name, []))
-        new_commits = [c for c in commits if c["sha"] not in repo_seen]
+        new_commits = [c for c in commits if c.get("sha_full", c["sha"]) not in repo_seen]
 
         velocity = _compute_star_velocity(repo_name, current_stars, star_history)
         is_new = repo_name not in known_repos_at_start
@@ -336,10 +357,10 @@ def gather(config: dict) -> DigestPayload:
 
         commits = _fetch_commits(repo_name, headers, since_iso)
         issues = _fetch_issues(repo_name, headers, since_iso)
-        releases = _fetch_releases(repo_name, headers)
+        releases = _fetch_releases(repo_name, headers, since_iso)
 
         repo_seen = set(seen_shas.get(repo_name, []))
-        new_commits = [c for c in commits if c["sha"] not in repo_seen]
+        new_commits = [c for c in commits if c.get("sha_full", c["sha"]) not in repo_seen]
 
         velocity = _compute_star_velocity(repo_name, current_stars, star_history)
         is_new = repo_name not in known_repos_at_start
@@ -373,7 +394,7 @@ def gather(config: dict) -> DigestPayload:
         # Update seen_shas with new commits
         if repo_name not in seen_shas:
             seen_shas[repo_name] = []
-        new_shas = [c["sha"] for c in activity["commits"]]
+        new_shas = [c.get("sha_full", c["sha"]) for c in activity["commits"]]
         seen_shas[repo_name] = list(set(seen_shas[repo_name]) | set(new_shas))
 
     save_state(
