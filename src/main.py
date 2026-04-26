@@ -118,7 +118,7 @@ def main() -> None:
     try:
         logger.info("stage=render starting")
         date_str = datetime.now(timezone.utc).strftime("%B %-d, %Y")
-        html = render(editorial, date=date_str)
+        html = render(editorial, date=date_str, payload=payload)
         logger.info("stage=render done: %d chars", len(html))
     except Exception as exc:
         logger.error("stage=render failed: %s", exc)

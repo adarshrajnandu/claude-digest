@@ -2,13 +2,13 @@ watchlist:
   - anthropics/claude-code
   - anthropics/anthropic-sdk-python
   - anthropics/anthropic-sdk-typescript
-  - anthropics/model-context-protocol
-  - anthropics/prompt-library
+  - modelcontextprotocol/specification
+  - anthropics/anthropic-cookbook
   - anthropics/courses
 
 # Email address your Resend-verified domain sends from.
 # Must match a domain you've verified at resend.com/domains.
-sender_email: "digest@yourdomain.com"
+sender_email: "onboarding@resend.dev"
 
 # Set to true after enabling GitHub Pages in repo Settings → Pages → Source: docs/ on main.
 github_pages:
