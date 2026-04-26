@@ -36,7 +36,7 @@ jobs:
       - name: Run digest pipeline
         run: python src/main.py
         env:
-          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+          GITHUB_PAT: ${{ secrets.GH_PAT }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           SUBSCRIBER_EMAILS: ${{ secrets.SUBSCRIBER_EMAILS }}
