@@ -1,21 +1,21 @@
 {
   "seen_shas": {
     "anthropics/claude-code": [
-      "ab3ce06c9ac0a6a0405850e642b80b0bb2c9fb25",
-      "a5fa36cac70f849daa48a0fc1aaa52af5d1c83b4",
       "c3933441f09efb3429934c2213ee29f21a55cf74",
-      "7e936457e4e3899460b2be2f2b9b9f0b0174e859"
+      "7e936457e4e3899460b2be2f2b9b9f0b0174e859",
+      "a5fa36cac70f849daa48a0fc1aaa52af5d1c83b4",
+      "ab3ce06c9ac0a6a0405850e642b80b0bb2c9fb25"
     ],
     "anthropics/anthropic-sdk-python": [
-      "d2b3cda70e3c3b2bc153a9a486f90c3111bd4323",
+      "c078db11d55c5b0455272e85617d8c1cfe76180e",
       "4d3e27c78b404f7a3fcb7b1cd2221033e615574b",
+      "5871ccb66966dc2b6a3a33b8c8bf419512d830b8",
       "5807d0efd8fac5fb7323dbd8949a2df8528a3456",
       "d274533036e250506f665011d8d3441ed5228944",
       "b4fba031da1b33c80aa5104e84a7babda3b847f5",
-      "c078db11d55c5b0455272e85617d8c1cfe76180e",
-      "2cb7a83a029aa3bd960536158f16231fe0ad6d0d",
-      "5871ccb66966dc2b6a3a33b8c8bf419512d830b8",
       "edbddf7715a78e56ab019737977e4e2db60acf1b",
+      "2cb7a83a029aa3bd960536158f16231fe0ad6d0d",
+      "d2b3cda70e3c3b2bc153a9a486f90c3111bd4323",
       "78c73600b714fcb036893768df8ee122f33d4cb3"
     ],
     "anthropics/anthropic-sdk-typescript": [
@@ -23,92 +23,98 @@
       "74ac150346ca92290b0fc57d9728e3841aa2dd54"
     ],
     "modelcontextprotocol/specification": [
-      "7a88d3cd5c9103fe7071ab28bc02cc1af0c413c6",
-      "c27bd902ece75e27e29367d86759e45cdc83a17f",
-      "ddce359fb8e6b2ab4b6a8901b54341b909d62676",
       "673a9dc915ed44dd0f89620c4f0554d70d94e71c",
-      "4fa26ca9d1df0a45219bf5e64198978dba855cca"
+      "c27bd902ece75e27e29367d86759e45cdc83a17f",
+      "4fa26ca9d1df0a45219bf5e64198978dba855cca",
+      "ddce359fb8e6b2ab4b6a8901b54341b909d62676",
+      "7a88d3cd5c9103fe7071ab28bc02cc1af0c413c6"
     ],
     "anthropics/anthropic-cookbook": [],
     "anthropics/courses": [],
     "n8n-io/n8n": [
-      "481fbdf186dc8b166c164592c82ec9b7a5edb8b0",
-      "e183ae4434a9ec6aee57792846d5483a754cdb56",
-      "9599fb9d5416e1c4aae43679484d717a789c165e",
-      "47bb91e9b4ade6638e8d54fb79cae54b90b0a1a2",
-      "bc5e490f686d908fc4a1efdbb4b2198bdbc98993",
-      "0d16dd5dfb6511db0292b67d450c34efcde55efb",
-      "35449aaa7b1ca016c919e555f9ba86ee0ea1db8f",
       "875d9c980cadf6bd532fd90d56724af0a3e0d74b",
+      "0d16dd5dfb6511db0292b67d450c34efcde55efb",
+      "9599fb9d5416e1c4aae43679484d717a789c165e",
+      "e183ae4434a9ec6aee57792846d5483a754cdb56",
+      "35449aaa7b1ca016c919e555f9ba86ee0ea1db8f",
       "f27bbc90226b3f370bb9f0103d742e7743fa5ce6",
-      "5dda3b2142b752722efb6ef4691ca74b618ae33d"
+      "5dda3b2142b752722efb6ef4691ca74b618ae33d",
+      "bc5e490f686d908fc4a1efdbb4b2198bdbc98993",
+      "47bb91e9b4ade6638e8d54fb79cae54b90b0a1a2",
+      "481fbdf186dc8b166c164592c82ec9b7a5edb8b0"
     ],
     "Significant-Gravitas/AutoGPT": [],
     "affaan-m/everything-claude-code": [],
     "f/prompts.chat": [
+      "6fee4c32ba2566894f5b3a89af32bfdce97b1de7",
       "28f4c2235dc07409516f8f0a4c98c8f411ffab5c",
-      "b3ae69df9dc580a44a46d8a24668eab6d9c76bd5",
-      "83bdbd658b65420a09caafafd3a0ac72f9254b1d",
-      "54af72adf1ef26e66a30b21308a32ba43857f1f9",
-      "4708674033e2df2536591080b54362eb124b2071",
+      "e72312a40318453a0fff4c910c1b97063a310da1",
       "e74d129e83eaf4802b9c76282fa0e4159b4b5e40",
       "cccd2b2480309c57daee64bb9474f910438719ab",
+      "83bdbd658b65420a09caafafd3a0ac72f9254b1d",
+      "4708674033e2df2536591080b54362eb124b2071",
+      "54af72adf1ef26e66a30b21308a32ba43857f1f9",
       "f99fc3eb56c80ae9b7fb3e3ae45cdb1e240b028a",
-      "6fee4c32ba2566894f5b3a89af32bfdce97b1de7",
-      "e72312a40318453a0fff4c910c1b97063a310da1"
+      "b3ae69df9dc580a44a46d8a24668eab6d9c76bd5"
     ],
     "Snailclimb/JavaGuide": [
+      "673e6af3817824c607f55b15c60921f57dd3df7e",
       "85a0bb4b3f22b473589d3ccc6c4cdbcca62976ae",
-      "0fc3530594cd482499060cd3b2870941ae6d4a2b",
-      "673e6af3817824c607f55b15c60921f57dd3df7e"
+      "0fc3530594cd482499060cd3b2870941ae6d4a2b"
     ],
     "langgenius/dify": [
-      "0baefa6163321aeb07fa49d7d1f3adc9198f5293",
-      "ce50c6cf1c163951e9716e43e3f45d87c5d017c4",
       "8b346e69d9712b4e62acf864af4764685f1b1384",
       "ef7ff3356d8e0174d806d6bf0a11b57d1b50499f",
-      "70025121064f01d125d798bb656696209a6b89c2",
-      "c3aebb8403a24cef7c8e3cc323a4d74a1ad60fda",
+      "7efc887e32a154216bba0dec1b2c2e32b3dee9e2",
+      "0baefa6163321aeb07fa49d7d1f3adc9198f5293",
       "f00512dd5d82023adba4d33ff9f44d926be9f50d",
-      "7b5c0b50458ba07739c5ac8bdcf8ee8748c94e76",
+      "ce50c6cf1c163951e9716e43e3f45d87c5d017c4",
+      "c3aebb8403a24cef7c8e3cc323a4d74a1ad60fda",
       "e6ef774fd5aac14ec5a1d878df0fe52548bd218a",
-      "7efc887e32a154216bba0dec1b2c2e32b3dee9e2"
+      "7b5c0b50458ba07739c5ac8bdcf8ee8748c94e76",
+      "70025121064f01d125d798bb656696209a6b89c2"
     ],
     "langchain-ai/langchain": [
-      "fa0f0d8efa54005b9256f8d4b28d1ff770372901",
-      "a70e7ab80ec4d6989bad735c3054d54008f62fb4",
       "9ce72eba9f6b3961d469a70b1b1980543f4cca91",
       "5a37cd5537c8d3715f538a06ee7184e0c36199cc",
-      "56d6e89be0aba2a27c5894948c2adfd34ccb01b2",
-      "87ba30f09773b8e9ec549841c57906f343b35ed8",
+      "fa0f0d8efa54005b9256f8d4b28d1ff770372901",
       "889a45b664638ef646fa58257cfe263d44cb6c6a",
       "c4498ccaf92d6cb0490033169fe034cff564bb72",
-      "ffaac42bf9e345ec1096d38965f36542a7b0467a",
-      "d44833ce34df310618aff71cfd1cd05c6dd53c94"
+      "d44833ce34df310618aff71cfd1cd05c6dd53c94",
+      "56d6e89be0aba2a27c5894948c2adfd34ccb01b2",
+      "a70e7ab80ec4d6989bad735c3054d54008f62fb4",
+      "87ba30f09773b8e9ec549841c57906f343b35ed8",
+      "ffaac42bf9e345ec1096d38965f36542a7b0467a"
     ],
     "open-webui/open-webui": [
-      "e0d6074cd2402ef983d18ad16ded88401ca44705",
-      "8ff7ff459b360e62ff9cbe0d6d2f6fc79cca6089",
-      "f48b8ffbf0a232b8487cd2b7d0181039b14f0586",
-      "3aeb691d985bc614cdfb927ddbd01f0c72c31777",
-      "b1bd3084f0ea0e7a6a53eaf1b6bb2389ba961ae7",
-      "3560d2f6305a9ddcdf9e3db54ad283deec94dd22",
-      "4e2240aadaff191ad360d37a7145e552359162c3",
-      "70b28b629e66ca98b07ba61b7514fa8c6e5b5529",
       "f93d20ac425b06d35cf283b2f770f070b600b950",
-      "8dae237a0bfdac4b7f55b463b3e2769ea4b94a0b"
+      "e0d6074cd2402ef983d18ad16ded88401ca44705",
+      "8dae237a0bfdac4b7f55b463b3e2769ea4b94a0b",
+      "b1bd3084f0ea0e7a6a53eaf1b6bb2389ba961ae7",
+      "8ff7ff459b360e62ff9cbe0d6d2f6fc79cca6089",
+      "4e2240aadaff191ad360d37a7145e552359162c3",
+      "3560d2f6305a9ddcdf9e3db54ad283deec94dd22",
+      "3aeb691d985bc614cdfb927ddbd01f0c72c31777",
+      "70b28b629e66ca98b07ba61b7514fa8c6e5b5529",
+      "f48b8ffbf0a232b8487cd2b7d0181039b14f0586"
     ],
     "NousResearch/hermes-agent": [
-      "e3901d5b257d5ac3f58420c3fb55aaa536fc56ac",
-      "20cb706e034e551a6df8f6f3ff798888ee5793e7",
-      "f2d655529a7d9228d8eff30447d88442d9054032",
-      "4e356098d21a29a4f86c8c55c0caef9b90d10307",
-      "de24315978cc69fd0932e141bedef6b8f28e4b88",
       "eaa7e2db670ba0879bc040c22c39d5abb39b897c",
-      "8443998dc3bf89e453152389bec79351d2cae710",
+      "0e2a53eab2ac7a937b2ce2a089b07c18f8e30bcf",
       "27f4dba5ceef6e93597d8767d3f745bd9ecbdd52",
       "06f81752ed40d5f0e780bee01fbba8947ce5007a",
-      "d7a346824626cb3d89578d1c56e5bc79bc2c93ff"
+      "4e356098d21a29a4f86c8c55c0caef9b90d10307",
+      "42c076d349e7a737355b37035ca415a79c719c4b",
+      "9662e3218a7fdb33efc3bdfe79247c6c5097ef86",
+      "20cb706e034e551a6df8f6f3ff798888ee5793e7",
+      "d7a346824626cb3d89578d1c56e5bc79bc2c93ff",
+      "9be83728a67c794daa20c553919f4869675a2edc",
+      "0824ba6a9db8c5e92d4fe2e7ee5bc086844b336e",
+      "f2d655529a7d9228d8eff30447d88442d9054032",
+      "e3901d5b257d5ac3f58420c3fb55aaa536fc56ac",
+      "8443998dc3bf89e453152389bec79351d2cae710",
+      "de24315978cc69fd0932e141bedef6b8f28e4b88",
+      "93977675135acb9370167392542241e9650a69e8"
     ]
   },
   "first_seen_repos": {
@@ -130,7 +136,7 @@
   },
   "star_history": {
     "anthropics/claude-code": {
-      "2026-04-26": 118102
+      "2026-04-26": 118125
     },
     "anthropics/anthropic-sdk-python": {
       "2026-04-26": 3318
@@ -142,37 +148,37 @@
       "2026-04-26": 7929
     },
     "anthropics/anthropic-cookbook": {
-      "2026-04-26": 41589
+      "2026-04-26": 41597
     },
     "anthropics/courses": {
-      "2026-04-26": 20875
+      "2026-04-26": 20879
     },
     "n8n-io/n8n": {
-      "2026-04-26": 185659
+      "2026-04-26": 185666
     },
     "Significant-Gravitas/AutoGPT": {
-      "2026-04-26": 183773
+      "2026-04-26": 183778
     },
     "affaan-m/everything-claude-code": {
-      "2026-04-26": 167426
+      "2026-04-26": 167472
     },
     "f/prompts.chat": {
-      "2026-04-26": 160762
+      "2026-04-26": 160774
     },
     "Snailclimb/JavaGuide": {
-      "2026-04-26": 155229
+      "2026-04-26": 155232
     },
     "langgenius/dify": {
-      "2026-04-26": 139225
+      "2026-04-26": 139229
     },
     "langchain-ai/langchain": {
-      "2026-04-26": 134996
+      "2026-04-26": 135000
     },
     "open-webui/open-webui": {
-      "2026-04-26": 134239
+      "2026-04-26": 134247
     },
     "NousResearch/hermes-agent": {
-      "2026-04-26": 117939
+      "2026-04-26": 118032
     }
   }
 }
